@@ -1,472 +1,462 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>BlackTechStudio</title>
-    <style type="text/css">
-
-        @font-face {
-            font-family: "JetBrains Mono";
-            font-weight: normal;
-            src: url("static/font/JetBrainsMono-Regular.woff2");
-        }
-
-        @font-face {
-            font-family: "JetBrains Mono";
-            font-weight: bold;
-            src: url("static/font/JetBrainsMono-Bold.woff2");
-        }
-
-
-        /**********************************************************************/
-
-        body {
-            margin: 0 auto 0 auto;
-            font-family: "JetBrains Mono", sans-serif;
-            min-width: 1900px;
-            max-width: 1920px;
-            user-select: none;
-            overflow-x: hidden;
-            background-color: #353535;
-            -webkit-font-smoothing: subpixel-antialiased;
-        }
-
-        body::-webkit-scrollbar {
-            display: none
-        }
-
-        /**********************************************************************/
-
-        #container-title {
-            padding-left: 100px;
-            padding-top: 100px;
-            padding-bottom: 400px;
-            background-color: #FBFBFB;
-        }
-
-        .title-font {
-            width: max-content;
-            color: #FFFFFF;
-            background-color: #000000;
-            margin-top: 20px;
-            padding-left: 25px;
-            padding-right: 75px;
-            transition: 185ms ease-in-out;
-        }
-
-        .title-font:hover {
-            margin-left: 75px;
-            padding-left: 75px;
-            padding-right: 25px;
-            transition: 185ms ease-in-out;
-        }
-
-        .title-font-1 {
-            font-size: 74px;
-        }
-
-        .title-font-2 {
-            font-size: 77px;
-        }
-
-        .title-font-3 {
-            font-size: 80px;
-        }
-
-        .title-font-4 {
-            font-size: 83px;
-        }
-
-        .title-font-5 {
-            font-size: 86px;
-            margin-top: 140px;
-        }
-
-        /**********************************************************************/
-
-        #container-mascot {
-            padding-left: 100px;
-            padding-top: 200px;
-            padding-bottom: 200px;
-            background-color: #000000;
-        }
-
-        .mascot-title {
-            color: #FFFFFF;
-            font-size: 150px;
-            margin-bottom: 100px;
-        }
-
-        .mascot-font {
-            font-weight: bold;
-            width: max-content;
-            color: #000000;
-            background-color: #F4F4F4;
-            margin-top: 30px;
-            padding-left: 15px;
-            padding-right: 45px;
-            transition: 185ms ease-in-out;
-        }
-
-        .mascot-font:hover {
-            margin-left: 25px;
-            padding-left: 50px;
-            padding-right: 10px;
-            transition: 185ms ease-in-out;
-        }
-
-        .mascot-font-1 {
-            font-size: 50px;
-        }
-
-        .mascot-font-2 {
-            font-size: 48px;
-        }
-
-        .mascot-font-3 {
-            font-size: 48px;
-        }
-
-        .mascot-font-4 {
-            font-size: 54px;
-        }
-
-        .mascot-font-5 {
-            font-size: 54px;
-        }
-
-        .mascot-font-6 {
-            font-size: 80px;
-            padding-right: 25px;
-            display: inline-block;
-            transition: 185ms ease-in-out;
-        }
-
-        .mascot-font-6:hover {
-            font-size: 80px;
-            padding-right: 250px;
-            transition: 185ms ease-in-out;
-        }
-
-        .mascot-furryblack {
-            position: absolute;
-            margin-top: 180px;
-            margin-left: 1280px;
-        }
-
-        .mascot-github {
-            position: absolute;
-            margin-top: 38px;
-            margin-left: 1080px;
-            cursor: pointer;
-        }
-
-        .mascot-heart-cover {
-            position: relative;
-            display: inline-block;
-            background-color: #000000;
-            height: 100px;
-            width: 200px;
-            margin-left: -9px;
-            margin-bottom: -22px;
-            z-index: 1;
-        }
-
-        .mascot-heart {
-            position: absolute;
-            margin-top: 9px;
-            margin-left: 980px;
-            font-size: 102px;
-            font-weight: bold;
-            color: #FF0000;
-            z-index: 0;
-        }
-
-        /**********************************************************************/
-
-        #container-mascot-backstory {
-            padding-top: 100px;
-            padding-bottom: 100px;
-            background-color: #83CBE9;
-            color: #FFFFFF;
-        }
-
-        .backstory-font {
-            font-size: 35px;
-            font-weight: bold;
-            margin-top: 40px;
-            margin-left: 200px;
-        }
-
-        .backstory-house {
-            font-size: 200px;
-            padding-left: 180px;
-        }
-
-        .backstory-sky {
-            width: 100%;
-            height: 200px;
-            background-color: #83CBE9;
-        }
-
-        .backstory-grass {
-            width: 100%;
-            height: 100px;
-            background-color: #16c60c;
-            z-index: 0;
-        }
-
-        .backstory-ground {
-            width: 100%;
-            background-color: #804000;
-            padding-top: 100px;
-            padding-bottom: 400px;
-        }
-
-        .backstory-minecraft-font {
-            color: #F0F0F0;
-            font-weight: bold;
-            font-size: 80px;
-            margin-top: 200px;
-            margin-left: 200px;
-        }
-
-        /**********************************************************************/
-
-        .minecraft-title-wrapper {
-            height: 640px;
-            background-color: #F01010;
-        }
-
-        .minecraft-title-wrapper > div {
-            height: 640px;
-            width: 960px;
-            border-left: #000000 10px solid;
-            border-right: #000000 10px solid;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .minecraft-title-wrapper > div > div {
-            height: 640px;
-            width: 10px;
-            background-color: #000000;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .minecraft-title {
-            height: 300px;
-            line-height: 300px;
-            font-size: 170px;
-            font-weight: bold;
-            text-align: center;
-            color: #000000;
-            background-color: #FFFFFF;
-            transition: 185ms ease-in-out;
-        }
-
-        .minecraft-title:hover {
-            font-size: 185px;
-            transition: 185ms ease-in-out;
-        }
-
-        .minecraft-server-text {
-            color: #000000;
-            background-color: #FFFFFF;
-            text-align: center;
-        }
-
-        .minecraft-server-title {
-            font-size: 40px;
-        }
-
-        .minecraft-server-address {
-            font-size: 30px;
-        }
-
-        .minecraft-server-title-1 {
-            padding-top: 350px;
-            padding-bottom: 30px;
-        }
-
-        .minecraft-server-address-1 {
-            padding-top: 30px;
-            padding-bottom: 50px;
-        }
-
-        .minecraft-server-address-2 {
-            margin-top: 350px;
-            padding-top: 50px;
-            padding-bottom: 30px;
-        }
-
-        .minecraft-server-title-2 {
-            padding-top: 30px;
-            padding-bottom: 350px;
-        }
-
-        .minecraft-picture {
-            position: fixed;
-            z-index: -1;
-            left: 0;
-            right: 0;
-            top: 0;
-            width: 100%;
-            height: 1080px;
-            background-size: cover;
-            background: #353535 url("static/img/room_corp.png") no-repeat center;
-        }
-
-
-        /**********************************************************************/
-
-        #container-footer {
-            padding-top: 550px;
-            padding-bottom: 150px;
-            background-color: #000000;
-        }
-
-        .footer-font {
-            text-align: center;
-            font-size: 150px;
-            color: #FFFFFF;
-            margin-left: 10px;
-            margin-right: 10px;
-        }
-
-        .footer-font-1 {
-            transition: 185ms ease-in-out;
-        }
-
-        .footer-font-2 {
-            transition: 185ms ease-in-out;
-        }
-
-        .footer-font-3 {
-            transition: 185ms ease-in-out;
-        }
-
-        .footer-font-1:hover {
-            font-weight: bold;
-            color: #000000;
-            background-color: #FFFFFF;
-            transition: 185ms ease-in-out;
-        }
-
-        .footer-font-2:hover {
-            font-weight: bold;
-            color: #000000;
-            background-color: #FFFFFF;
-            transition: 185ms ease-in-out;
-        }
-
-        .footer-font-3:hover {
-            font-weight: bold;
-            color: #000000;
-            background-color: #FFFFFF;
-            transition: 185ms ease-in-out;
-        }
-
-        /**********************************************************************/
-
-        .footer-out {
-            padding-top: 30px;
-            padding-bottom: 30px;
-            color: #FFFFFF;
-            background-color: #353535;
-            font-size: 20px;
-            text-align: center;
-            transition: 185ms ease-in-out;
-        }
-
-        .footer-out:hover {
-            color: #000000;
-            background-color: #FFFFFF;
-            transition: 185ms ease-in-out;
-        }
-
-        .footer-cut {
-            height: 50px;
-            width: 100%;
-            background-color: #000000;
-        }
-
-    </style>
+
+  <meta charset="UTF-8">
+
+  <title>BlackTechStudio</title>
+
+  <style>
+
+    @font-face {
+      font-family: "JetBrains Mono";
+      font-weight: normal;
+      src: url("static/font/JetBrainsMono-Regular.woff2");
+    }
+
+    @font-face {
+      font-family: "JetBrains Mono";
+      font-weight: bold;
+      src: url("static/font/JetBrainsMono-Bold.woff2");
+    }
+
+
+    /**********************************************************************/
+
+    body {
+      margin: 0 auto 0 auto;
+      font-family: "JetBrains Mono", sans-serif;
+      min-width: 1900px;
+      max-width: 1920px;
+      user-select: none;
+      overflow-x: hidden;
+      background-color: #353535;
+      -webkit-font-smoothing: subpixel-antialiased;
+    }
+
+    body::-webkit-scrollbar {
+      display: none
+    }
+
+    /**********************************************************************/
+
+    #container-title {
+      padding-left: 100px;
+      padding-top: 100px;
+      padding-bottom: 400px;
+      background-color: #FBFBFB;
+    }
+
+    .title-font {
+      width: max-content;
+      color: #FFFFFF;
+      background-color: #000000;
+      margin-top: 20px;
+      padding-left: 25px;
+      padding-right: 75px;
+      transition: 185ms ease-in-out;
+    }
+
+    .title-font:hover {
+      margin-left: 75px;
+      padding-left: 75px;
+      padding-right: 25px;
+      transition: 185ms ease-in-out;
+    }
+
+    .title-font-1 {
+      font-size: 74px;
+    }
+
+    .title-font-2 {
+      font-size: 77px;
+    }
+
+    .title-font-3 {
+      font-size: 80px;
+    }
+
+    .title-font-4 {
+      font-size: 83px;
+    }
+
+    .title-font-5 {
+      font-size: 86px;
+      margin-top: 140px;
+    }
+
+    /**********************************************************************/
+
+    #container-mascot {
+      padding-left: 100px;
+      padding-top: 200px;
+      padding-bottom: 200px;
+      background-color: #000000;
+    }
+
+    .mascot-title {
+      color: #FFFFFF;
+      font-size: 150px;
+      margin-bottom: 100px;
+    }
+
+    .mascot-font {
+      font-weight: bold;
+      width: max-content;
+      color: #000000;
+      background-color: #F4F4F4;
+      margin-top: 30px;
+      padding-left: 15px;
+      padding-right: 45px;
+      transition: 185ms ease-in-out;
+    }
+
+    .mascot-font:hover {
+      margin-left: 25px;
+      padding-left: 50px;
+      padding-right: 10px;
+      transition: 185ms ease-in-out;
+    }
+
+    .mascot-font-1 {
+      font-size: 50px;
+    }
+
+    .mascot-font-2 {
+      font-size: 48px;
+    }
+
+    .mascot-font-3 {
+      font-size: 48px;
+    }
+
+    .mascot-font-4 {
+      font-size: 54px;
+    }
+
+    .mascot-font-5 {
+      font-size: 54px;
+    }
+
+    .mascot-font-6 {
+      font-size: 80px;
+      padding-right: 25px;
+      display: inline-block;
+      transition: 185ms ease-in-out;
+    }
+
+    .mascot-font-6:hover {
+      font-size: 80px;
+      padding-right: 250px;
+      transition: 185ms ease-in-out;
+    }
+
+    .mascot-furryblack {
+      position: absolute;
+      margin-top: 180px;
+      margin-left: 1280px;
+    }
+
+    .mascot-github {
+      position: absolute;
+      margin-top: 38px;
+      margin-left: 1080px;
+      cursor: pointer;
+    }
+
+    .mascot-heart-cover {
+      position: relative;
+      display: inline-block;
+      background-color: #000000;
+      height: 100px;
+      width: 200px;
+      margin-left: -9px;
+      margin-bottom: -22px;
+      z-index: 1;
+    }
+
+    .mascot-heart {
+      position: absolute;
+      margin-top: 9px;
+      margin-left: 980px;
+      font-size: 102px;
+      font-weight: bold;
+      color: #FF0000;
+      z-index: 0;
+    }
+
+    /**********************************************************************/
+
+    #container-mascot-backstory {
+      padding-top: 100px;
+      padding-bottom: 100px;
+      background-color: #83CBE9;
+      color: #FFFFFF;
+    }
+
+    .backstory-font {
+      font-size: 35px;
+      font-weight: bold;
+      margin-top: 40px;
+      margin-left: 200px;
+    }
+
+    .backstory-house {
+      font-size: 200px;
+      padding-left: 180px;
+    }
+
+    .backstory-sky {
+      width: 100%;
+      height: 200px;
+      background-color: #83CBE9;
+    }
+
+    .backstory-grass {
+      width: 100%;
+      height: 100px;
+      background-color: #16c60c;
+      z-index: 0;
+    }
+
+    .backstory-ground {
+      width: 100%;
+      background-color: #804000;
+      padding-top: 100px;
+      padding-bottom: 400px;
+    }
+
+    .backstory-minecraft-font {
+      color: #F0F0F0;
+      font-weight: bold;
+      font-size: 80px;
+      margin-top: 200px;
+      margin-left: 200px;
+    }
+
+    /**********************************************************************/
+
+    .minecraft-title-wrapper {
+      height: 640px;
+      background-color: #F01010;
+    }
+
+    .minecraft-title-wrapper > div {
+      height: 640px;
+      width: 960px;
+      border-left: #000000 10px solid;
+      border-right: #000000 10px solid;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .minecraft-title-wrapper > div > div {
+      height: 640px;
+      width: 10px;
+      background-color: #000000;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .minecraft-title {
+      height: 300px;
+      line-height: 300px;
+      font-size: 170px;
+      font-weight: bold;
+      text-align: center;
+      color: #000000;
+      background-color: #FFFFFF;
+      transition: 185ms ease-in-out;
+    }
+
+    .minecraft-title:hover {
+      font-size: 185px;
+      transition: 185ms ease-in-out;
+    }
+
+    .minecraft-server-text {
+      color: #000000;
+      background-color: #FFFFFF;
+      text-align: center;
+    }
+
+    .minecraft-server-title {
+      font-size: 40px;
+    }
+
+    .minecraft-server-address {
+      font-size: 30px;
+    }
+
+    .minecraft-server-title-1 {
+      padding-top: 350px;
+      padding-bottom: 30px;
+    }
+
+    .minecraft-server-address-1 {
+      padding-top: 30px;
+      padding-bottom: 50px;
+    }
+
+    .minecraft-server-address-2 {
+      margin-top: 350px;
+      padding-top: 50px;
+      padding-bottom: 30px;
+    }
+
+    .minecraft-server-title-2 {
+      padding-top: 30px;
+      padding-bottom: 350px;
+    }
+
+    .minecraft-picture {
+      position: fixed;
+      z-index: -1;
+      left: 0;
+      right: 0;
+      top: 0;
+      width: 100%;
+      height: 1080px;
+      background-size: cover;
+      background: #353535 url("static/img/room_corp.png") no-repeat center;
+    }
+
+
+    /**********************************************************************/
+
+    #container-footer {
+      padding-top: 550px;
+      padding-bottom: 550px;
+      background-color: #000000;
+    }
+
+    .footer-font {
+      text-align: center;
+      font-size: 150px;
+      color: #FFFFFF;
+      margin: 100px 10px;
+    }
+
+    .footer-font-1 {
+      padding: 10px;
+      transition: 185ms ease-in-out;
+    }
+
+    .footer-font-2 {
+      padding: 10px;
+      transition: 185ms ease-in-out;
+    }
+
+    .footer-font-3 {
+      padding: 10px 30px;
+      color: #000000;
+      background-color: #FFFFFF;
+      transition: 185ms ease-in-out;
+      font-weight: 600;
+    }
+
+
+    /**********************************************************************/
+
+    .footer-out {
+      padding-top: 30px;
+      padding-bottom: 30px;
+      color: #FFFFFF;
+      background-color: #353535;
+      font-size: 20px;
+      text-align: center;
+      transition: 185ms ease-in-out;
+    }
+
+    .footer-out:hover {
+      color: #000000;
+      background-color: #FFFFFF;
+      transition: 185ms ease-in-out;
+    }
+
+    .footer-cut {
+      height: 50px;
+      width: 100%;
+      background-color: #000000;
+    }
+
+  </style>
 </head>
 <body>
 
 <div id="container-title">
-    <div class="title-font title-font-1">WE MAKE IT VISUAL</div>
-    <div class="title-font title-font-2">WE MAKE IT VISIBLE</div>
-    <div class="title-font title-font-3">WE MAKE IT VIVIFIED</div>
-    <div class="title-font title-font-4">WE MAKE IT INCREDIBLE</div>
-    <div class="title-font title-font-5">CALL US BLACK TECH STUDIO</div>
+  <div class="title-font title-font-1">WE MAKE IT VISUAL</div>
+  <div class="title-font title-font-2">WE MAKE IT VISIBLE</div>
+  <div class="title-font title-font-3">WE MAKE IT VIVIFIED</div>
+  <div class="title-font title-font-4">WE MAKE IT INCREDIBLE</div>
+  <div class="title-font title-font-5">WE CALL IT BLACK TECH STUDIO</div>
 </div>
 
 <div id="container-mascot">
-    <div class="mascot-furryblack"><img src="static/img/furryblack.png" alt="FURRYBLACK"/></div>
-    <div class="mascot-github" onclick="window.open('https://github.com/Alceatraz/FurryBlack-Mirai')"><img src="static/img/github.png" alt="Star on github"/></div>
-    <div class="mascot-title">FURRY BLACK</div>
-    <div class="mascot-font mascot-font-1">OUR BRAND MASCOT</div>
-    <div class="mascot-font mascot-font-2">OUR SECURITY GUARD</div>
-    <div class="mascot-font mascot-font-3">OUR ROULETTE JUDGE</div>
-    <div class="mascot-font mascot-font-4">OUR NOSTRADAMUS</div>
-    <div class="mascot-font mascot-font-5">OUR HOUSEKEEPER</div>
-    <div class="mascot-heart">♥</div>
-    <div class="mascot-font mascot-font-6">OUR FAMILY MEMBER</div>
-    <div class="mascot-heart-cover"></div>
+  <div class="mascot-furryblack"><img src="static/img/furryblack.png" alt="FURRYBLACK"/></div>
+  <div class="mascot-github" onclick="window.open('https://github.com/Alceatraz/FurryBlack-Mirai')"><img src="static/img/github.png" alt="Star on github"/></div>
+  <div class="mascot-title">FURRY BLACK</div>
+  <div class="mascot-font mascot-font-1">OUR BRAND MASCOT</div>
+  <div class="mascot-font mascot-font-2">OUR SECURITY GUARD</div>
+  <div class="mascot-font mascot-font-3">OUR ROULETTE JUDGE</div>
+  <div class="mascot-font mascot-font-4">OUR NOSTRADAMUS</div>
+  <div class="mascot-font mascot-font-5">OUR HOUSEKEEPER</div>
+  <div class="mascot-heart">♥</div>
+  <div class="mascot-font mascot-font-6">OUR FAMILY MEMBER</div>
+  <div class="mascot-heart-cover"></div>
 </div>
 
 <div id="container-mascot-backstory">
-    <div class="backstory-font">We create a chat group BOT,</div>
-    <div class="backstory-font">His job is management and entertainment.</div>
-    <div class="backstory-font">As design, He is a nostradamus and roulette judge.</div>
-    <div class="backstory-font">We give him a backstory, Our elegant and loyal housekeeper.</div>
-    <div class="backstory-font">He keeping and guarding our house make the place we call it home.</div>
+  <div class="backstory-font">We create a chat group BOT,</div>
+  <div class="backstory-font">His job is management and entertainment.</div>
+  <div class="backstory-font">As design, He is a nostradamus and roulette judge.</div>
+  <div class="backstory-font">We give him a backstory, Our elegant and loyal housekeeper.</div>
+  <div class="backstory-font">He keeping and guarding our house make the place we call it home.</div>
 </div>
 
 <div class="backstory-sky">
-    <div class="backstory-house">🏠</div>
+  <div class="backstory-house">🏠</div>
 </div>
 
 <div class="backstory-grass"></div>
 
 <div class="backstory-ground">
-    <div class="backstory-minecraft-font">When it comes to home</div>
-    <div class="backstory-minecraft-font">We happens got one</div>
-    <div class="backstory-minecraft-font">Welcome to our</div>
+  <div class="backstory-minecraft-font">When it comes to home</div>
+  <div class="backstory-minecraft-font">We happens got one</div>
+  <div class="backstory-minecraft-font">Welcome to our</div>
 </div>
 
 <div id="container-minecraft">
-    <div class="minecraft-title-wrapper">
-        <div>
-            <div></div>
-        </div>
+  <div class="minecraft-title-wrapper">
+    <div>
+      <div></div>
     </div>
-    <div class="minecraft-title">MINECRAFT SERVER</div>
-    <div class="minecraft-title-wrapper">
-        <div>
-            <div></div>
-        </div>
+  </div>
+  <div class="minecraft-title">MINECRAFT SERVER</div>
+  <div class="minecraft-title-wrapper">
+    <div>
+      <div></div>
     </div>
-    <div class="minecraft-wrapper">
-        <div class="minecraft-picture"></div>
-        <div class="minecraft-server-text minecraft-server-title minecraft-server-title-1">Vanila(Spigot) 1.18.1 Type7 - New ERA</div>
-        <div class="minecraft-server-text minecraft-server-address minecraft-server-address-1">SRV Record: type7.blacktech.studio</div>
-        <div class="minecraft-server-text minecraft-server-address minecraft-server-address-2">SRV Record: type3.blacktech.studio</div>
-        <div class="minecraft-server-text minecraft-server-title minecraft-server-title-2">Vanila(Spigot) 1.16.5 Type3 - Secret </div>
-    </div>
+  </div>
+  <div class="minecraft-wrapper">
+    <div class="minecraft-picture"></div>
+    <div class="minecraft-server-text minecraft-server-title minecraft-server-title-1">Vanila(Spigot) 1.16.5 Type3 - Secret</div>
+    <div class="minecraft-server-text minecraft-server-address minecraft-server-address-1">SRV Record: type3.btsrk.fun</div>
+    <div class="minecraft-server-text minecraft-server-address minecraft-server-address-2">SRV Record: type7.btsrk.fun</div>
+    <div class="minecraft-server-text minecraft-server-title minecraft-server-title-2">Vanila(Spigot) 1.18.1 Type7 - New ERA</div>
+  </div>
 </div>
 
 <div id="container-footer">
-    <div class="footer-font">MORE TO COME</div>
-    <div class="footer-font">WE ARE</div>
-    <div class="footer-font">
-        <span class="footer-font-1">BLACK</span>
-        <span class="footer-font-2">TECH</span>
-        <span class="footer-font-3">STUDIO</span>
-    </div>
+  <div class="footer-font">MORE TO COME</div>
+  <div class="footer-font">WE ARE</div>
+  <div class="footer-font">
+    <span class="footer-font-1">BLACK</span>
+    <span class="footer-font-2">TECH</span>
+    <span class="footer-font-3">STUDIO</span>
+  </div>
 </div>
 
 <div class="footer-out">Power by GitHub page</div>
@@ -475,10 +465,10 @@
 </body>
 
 <script id="script" type="text/javascript">
-    window.onload = () => {
-        console.info('肖戰N♥M♥S♥L');
-        document.getElementById('script').remove();
-    };
+  window.onload = () => {
+    console.info('肖戰N♥M♥S♥L');
+    document.getElementById('script').remove();
+  };
 </script>
 
 </html>
